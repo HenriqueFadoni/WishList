@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Form from './container/Form';
+import WishList from './container/WishList';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <ul>
           <li>Create a Form and a Data base at Firebase</li>
           <li>Link this form with the External Database</li>
@@ -13,7 +15,7 @@ class App extends Component {
           <li>Style it using CSS/SASS</li>
         </ul>
         <p> List will be a class as well as ViewList. The rest may be a function.</p>
-        
+        <Form />
       </div>
     );
   }

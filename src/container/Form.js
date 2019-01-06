@@ -1,10 +1,12 @@
-import react, { Component } from 'react';
+import React, { Component } from 'react';
 
 class Form extends Component {
     render () {
-        return {
-            
-        }
+        return (
+            <div>
+                <p>Form</p>
+            </div>
+        );
     }
 }
 
