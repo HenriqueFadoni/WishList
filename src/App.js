@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from './container/Form';
+import Form from './container/Form/Form';
 import WishList from './container/WishList';
 import './App.css';
 
