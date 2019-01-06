@@ -13,6 +13,7 @@ class App extends Component {
           <li>Style it using CSS/SASS</li>
         </ul>
         <p> List will be a class as well as ViewList. The rest may be a function.</p>
+        
       </div>
     );
   }
