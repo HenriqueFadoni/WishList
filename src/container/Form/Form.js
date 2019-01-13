@@ -15,13 +15,17 @@ class Form extends Component {
     formHandler = event => {
         event.preventDefault();
         const dataWish = {
-            id: '_' + Math.random().toString(36).substr(2, 9),
+            id: this.idGenerator(),
             title: this.state.wish.title,
             description: this.state.wish.description
         }
         axios.post('/wish.json', dataWish)
             .then(response => console.log(response))
             .catch(error => console.log(error));   
+    }
+
+    idGenerator = () => {
+        return '_' + Math.random().toString(36).substr(2, 9)
     }
 
     onInputChange = (event, stateTarget) => {
