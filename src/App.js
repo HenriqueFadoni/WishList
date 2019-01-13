@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from './container/Form/Form';
+import WishRegister from './container/WishRegister/WishRegister';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
           <li>Style it using CSS/SASS</li>
         </ul>
         <p> List will be a class as well as ViewList. The rest may be a function.</p>
-        <Form />
+        <WishRegister />
       </div>
     );
   }

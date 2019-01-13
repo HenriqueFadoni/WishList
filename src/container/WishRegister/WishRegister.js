@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import './Form.css';
+import './WishRegister.css';
+import Form from '../../component/Form/Form';
 import axios from '../../axios-setup';
 
-class Form extends Component {
+class WishRegister extends Component {
     state = {
         wish: {
             title: '',
@@ -46,28 +47,12 @@ class Form extends Component {
     render () {
         return (
             <div className='Container'>
-                <div className='formContainer'>
-                    <h1>Add a wish to your WishList!</h1>
-                    <form onSubmit={this.formHandler}>
-                        <input
-                            name="title" 
-                            type="text" 
-                            placeholder="Title" 
-                            onChange={event => this.onInputChange(event, 'title')}
-                            required/>
-                        <textarea
-                            name="description" 
-                            placeholder="Description" 
-                            onChange={event => this.onInputChange(event, 'description')}
-                            required/>
-                        <button 
-                            type="button" 
-                            onClick={this.formHandler}>Submit</button>
-                    </form>
-                </div>
+                <Form 
+                    submitted={this.formHandler}
+                    changed={this.onInputChange}/>
             </div>
         );
     }
 }
 
-export default Form;
+export default WishRegister;
