@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from '../../axios-setup';
 
+import List from '../../component/List/List';
+
 class WishList extends Component {
     state = {
         wishesArray: []
@@ -10,19 +12,26 @@ class WishList extends Component {
         axios.get('/wish.json')
             .then(response => {
                 const wishes = Object.values(response.data);
-                this.setState({wishesArray: wishes});
+                this.setState({ wishesArray: wishes });
             })
             .catch(error => {
                 console.log(error);
             });
     }
 
-
-
-    render () {
+    render() {
+        const wishList = this.state.wishesArray.map(wish => {
+            return (
+                <List
+                    key={wish.id}
+                    title={wish.title}
+                    description={wish.description}/>
+            );
+        })
         return (
             <div>
-                <p>k</p>
+                <h3>This is your WISHLIST: </h3>
+                {wishList}
             </div>
         );
     }
