@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WishRegister from './container/WishRegister/WishRegister';
+import WishList from './container/WishList/WishList';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         </ul>
         <p> List will be a class as well as ViewList. The rest may be a function.</p>
         <WishRegister />
+        <WishList />
       </div>
     );
   }
