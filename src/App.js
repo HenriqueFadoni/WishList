@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, NavLink} from 'react-router-dom';
+
 import WishRegister from './container/WishRegister/WishRegister';
 import WishList from './container/WishList/WishList';
 import './App.css';
@@ -15,8 +17,13 @@ class App extends Component {
           <li>Style it using CSS/SASS</li>
         </ul>
         <p> List will be a class as well as ViewList. The rest may be a function.</p>
-        <WishRegister />
-        <WishList />
+
+        <nav>
+          <NavLink to="/">Wish Register</NavLink>
+          <NavLink to="/WishList">Wish List</NavLink>
+        </nav>
+        <Route path="/" component={WishRegister} exact/>
+        <Route path="/WishList" component={WishList}/>
       </div>
     );
   }
