@@ -14,6 +14,7 @@ class WishRegister extends Component {
     };
 
     formHandler = event => {
+        event.currentTarget.reset();
         event.preventDefault();
         const dataWish = {
             id: this.idGenerator(),
@@ -21,8 +22,11 @@ class WishRegister extends Component {
             description: this.state.wish.description
         }
         axios.post('/wish.json', dataWish)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));   
+            .then(response => {
+                this.setState({submitted: true});
+            })
+            .catch(error => console.log(error));
+        
     }
 
     idGenerator = () => {

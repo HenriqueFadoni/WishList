@@ -19,8 +19,7 @@ const Form = props => {
                     onChange={event => props.changed(event, 'description')}
                     required />
                 <button
-                    type="button"
-                    onClick={props.submitted}>Submit</button>
+                    type="submit">Submit</button>
             </form>
         </div>
     );
