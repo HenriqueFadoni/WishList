@@ -25,7 +25,7 @@ class WishList extends Component {
                 <List
                     key={wish.id}
                     title={wish.title}
-                    description={wish.description}/>
+                    description={wish.description} />
             );
         })
         return (
