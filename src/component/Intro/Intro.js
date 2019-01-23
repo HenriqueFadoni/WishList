@@ -1,18 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import './Intro.css';
+
 const Intro = () => {
     return (
-        <div>
-            <div>
+        <div className="MainDiv">
+            <div className="SubTitle">
                 <h2>Welcome To</h2>
             </div>
-            <div>
-                <h3>WISHLIST</h3>
+            <div className="Title">
+                <h1>WISHLIST</h1>
             </div>
-            <NavLink to="/WishListRegister">
-                <button >SIGN IN/OUT</button>
-            </NavLink>
+            <div className="BtnSignUp">
+                <NavLink to="/WishListRegister">
+                    <button >SIGN UP</button>
+                </NavLink>
+            </div>
         </div>
     );
 }

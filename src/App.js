@@ -4,7 +4,6 @@ import { Route, NavLink} from 'react-router-dom';
 import WishRegister from './container/WishRegister/WishRegister';
 import WishList from './container/WishList/WishList';
 import Intro from './component/Intro/Intro';
-import './App.css';
 
 class App extends Component {
   render() {

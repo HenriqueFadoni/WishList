@@ -1,0 +1,44 @@
+.MainDiv {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.90);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url('../../assets/images/backgroundIntro.jpg');
+    position: relative;
+    color: white;
+}
+
+.Title {
+    position: absolute;
+    font-size: 5em;
+    top: 250px;
+    left: 300px;
+}
+
+.SubTitle {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+.SubTitle h2 {
+    font-size: 3em;
+}
+
+.BtnSignUp {
+    position: absolute;
+    width: 60vw;
+    left: 35%;
+    top: 70%;
+}
+
+.BtnSignUp button {
+    border: none;
+    background-color: rgb(32, 204, 32);
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+}
