@@ -5,14 +5,14 @@ import './Intro.css';
 
 const Intro = () => {
     return (
-        <div className="MainDiv">
-            <div className="SubTitle">
+        <div className="main-div ">
+            <div className="sub-title">
                 <h2>Welcome To</h2>
             </div>
-            <div className="Title">
+            <div className="title">
                 <h1>WISHLIST</h1>
             </div>
-            <div className="BtnSignUp">
+            <div className="btn-sign-up">
                 <NavLink to="/WishListRegister">
                     <button >SIGN UP</button>
                 </NavLink>
