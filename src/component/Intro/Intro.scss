@@ -1,0 +1,66 @@
+// -- IMPORTANT VARIABLES --
+
+$black-color: #000;
+$dark-green-color: #28a745;
+$light-green-color: #2dc450;
+$white-color: white;
+
+$image-url: '../../assets/images/backgroundIntro.jpg';
+
+
+// -- MAIN DIV --
+.main-div {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 0.6em;
+    background-color: rgba($black-color, 0.90);
+    background-image:
+        linear-gradient(rgba($black-color, 0.7), rgba($black-color, 0.7)), 
+        url($image-url);
+    position: relative;
+    color: $white-color;
+}
+
+// -- TITLE AND SUB-TITLE --
+.title {
+    position: absolute;
+    font-size: 6vw;
+    top: 30vh;
+    left: 18vw;
+}
+
+.sub-title {
+    position: absolute;
+    top: 20vh;
+    left: 6vw;
+    h2 {
+        font-size: 4vw;
+    }
+}
+
+// -- BUTTON --
+.btn-sign-up {
+    position: absolute;
+    width: 60vw;
+    left: 35%;
+    top: 70%;
+
+    button {
+        &,
+        &:visited,
+        &:active {
+            background-color: $dark-green-color;
+            color: $white-color;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1rem;
+            border: none;
+            transition-duration: 0.5s;
+        }
+
+        &:hover {
+            background-color: $light-green-color;
+        }
+    }
+}
