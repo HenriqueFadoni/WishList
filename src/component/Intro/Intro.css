@@ -35,10 +35,18 @@
     top: 70%;
 }
 
-.btn-sign-up button {
-    border: none;
+.btn-sign-up button,
+.btn-sign-up button:visited,
+.btn-sign-up button:active {
     background-color: #28a745;
     color: white;
     border-radius: 40px;
     cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.btn-sign-up button:hover {
+    background-color: #2dc450;
 }
