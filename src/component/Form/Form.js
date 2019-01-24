@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Form.css';
+import './Form.scss';
 
 const Form = props => {
     return (
@@ -10,16 +10,19 @@ const Form = props => {
                 <input
                     name="title"
                     type="text"
+                    className="wish-title-input"
                     placeholder="Title"
                     onChange={event => props.changed(event, 'title')}
                     required />
                 <textarea
                     name="description"
+                    className="wish-textarea-input"
                     placeholder="Description"
                     onChange={event => props.changed(event, 'description')}
                     required />
                 <button
-                    type="submit">Submit</button>
+                    type="submit"
+                    className="wish-btn-register-input">Submit</button>
             </form>
         </div>
     );

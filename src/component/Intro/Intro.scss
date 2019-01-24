@@ -26,64 +26,60 @@ $image-url: '../../assets/images/backgroundIntro.jpg';
 // -- TITLE AND SUB-TITLE --
 .title {
     position: absolute;
-    font-size: 6vw;
-    top: 30vh;
-    left: 18vw;
+    font-size: 12vw;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation-name: title-animation;
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 
 .sub-title {
     position: absolute;
+    font-size: 4vw;
     top: 20vh;
     left: 6vw;
     animation-name: sub-title-animation;
     animation-duration: 1s;
-
-    h2 {
-        font-size: 4vw;
-    }
 }
 
 // -- BUTTON --
 .btn-sign-up {
-    position: absolute;
-    width: 60vw;
-    left: 35%;
-    top: 70%;
+    &,
+    &:visited,
+    &:active {
+        background-color: $normal-green-color;
+        color: $white-color;
+        border: none;
+        border-radius: 40px;
+        font-size: 1rem;
+        position: absolute;
+        height: 5vh;
+        width: 30vw;
+        left: 35%;
+        top: 70%;
+        cursor: pointer;
+        transition-duration: 0.5s;
+    }
 
-    button {
-        &,
-        &:visited,
-        &:active {
-            background-color: $normal-green-color;
-            color: $white-color;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 1rem;
-            border: none;
-            transition-duration: 0.5s;
-        }
+    &:hover {
+        background-color: $light-green-color;
+    }
 
-        &:hover {
-            background-color: $light-green-color;
-        }
-
-        &:active {
-            background: $darker-green-color;
-        }
+    &:active {
+        background: $darker-green-color;
     }
 }
 
 // -- ANIMATION --
 @keyframes title-animation {
     0% {
-        left: 30vw;
+        left: 90%;
         opacity: 0;
     }
 
-    90%{
-        left: 18vw;
+    100%{
+        left: 50%;
         opacity: 0.9;
     }
 }

@@ -6,17 +6,11 @@ import './Intro.scss';
 const Intro = () => {
     return (
         <div className="main-div ">
-            <div className="sub-title">
-                <h2>Welcome To</h2>
-            </div>
-            <div className="title">
-                <h1>WISHLIST</h1>
-            </div>
-            <div className="btn-sign-up">
-                <NavLink to="/WishListRegister">
-                    <button >SIGN UP</button>
-                </NavLink>
-            </div>
+            <h2 className="sub-title">Welcome To</h2>
+            <h1 className="title">WISHLIST</h1>
+            <NavLink to="/WishListRegister">
+                <button className="btn-sign-up">SIGN UP</button>
+            </NavLink>
         </div>
     );
 }

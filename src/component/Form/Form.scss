@@ -1,0 +1,41 @@
+.formContainer {
+    border-radius: 20px;
+    position: absolute;
+    width: 35vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    text-align: center;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.wish-title-input,
+.wish-textarea-input {
+    resize: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.wish-textarea-input {
+    height: 10vh;
+    width: 30vw;
+}
+
+.wish-title-input {
+    width: 30vw;
+}
+
+.wish-btn-register-input {
+    width: 40%;
+    height: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-size: 1rem;
+}

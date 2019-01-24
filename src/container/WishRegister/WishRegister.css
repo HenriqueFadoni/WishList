@@ -10,6 +10,6 @@ h1 {
 .Container {
     background-color: lightblue;
     width: 100%;
-    height: 500px;
+    height: 100vh;
     position: relative;
 }
