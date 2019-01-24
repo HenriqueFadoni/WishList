@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import './WishRegister.scss';
+import NavigationBar from '../../component/NavigationBar/NavigationBar';
 import Form from '../../component/Form/Form';
 import axios from '../../axios-setup';
+import Aux from '../../hoc/aux';
+import './WishRegister.scss';
+
 
 class WishRegister extends Component {
     state = {
@@ -50,11 +53,14 @@ class WishRegister extends Component {
 
     render () {
         return (
-            <div className='Container'>
-                <Form 
-                    submitted={this.formHandler}
-                    changed={this.onInputChange}/>
-            </div>
+            <Aux>
+                <NavigationBar />
+                <div className='Container'>
+                    <Form 
+                        submitted={this.formHandler}
+                        changed={this.onInputChange}/>
+                </div>
+            </Aux>
         );
     }
 }
