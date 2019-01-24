@@ -1,8 +1,9 @@
 // -- IMPORTANT VARIABLES --
 
 $black-color: #000;
-$dark-green-color: #28a745;
 $light-green-color: #2dc450;
+$normal-green-color: #28a745;
+$darker-green-color: #124d20;
 $white-color: white;
 
 $image-url: '../../assets/images/backgroundIntro.jpg';
@@ -14,7 +15,7 @@ $image-url: '../../assets/images/backgroundIntro.jpg';
     height: 100vh;
     margin: auto;
     padding: 0.6em;
-    background-color: rgba($black-color, 0.90);
+    background-color: rgba($black-color, 0.9);
     background-image:
         linear-gradient(rgba($black-color, 0.7), rgba($black-color, 0.7)), 
         url($image-url);
@@ -28,12 +29,17 @@ $image-url: '../../assets/images/backgroundIntro.jpg';
     font-size: 6vw;
     top: 30vh;
     left: 18vw;
+    animation-name: title-animation;
+    animation-duration: 3s;
 }
 
 .sub-title {
     position: absolute;
     top: 20vh;
     left: 6vw;
+    animation-name: sub-title-animation;
+    animation-duration: 1s;
+
     h2 {
         font-size: 4vw;
     }
@@ -50,7 +56,7 @@ $image-url: '../../assets/images/backgroundIntro.jpg';
         &,
         &:visited,
         &:active {
-            background-color: $dark-green-color;
+            background-color: $normal-green-color;
             color: $white-color;
             border-radius: 40px;
             cursor: pointer;
@@ -62,5 +68,34 @@ $image-url: '../../assets/images/backgroundIntro.jpg';
         &:hover {
             background-color: $light-green-color;
         }
+
+        &:active {
+            background: $darker-green-color;
+        }
+    }
+}
+
+// -- ANIMATION --
+@keyframes title-animation {
+    0% {
+        left: 30vw;
+        opacity: 0;
+    }
+
+    90%{
+        left: 18vw;
+        opacity: 0.9;
+    }
+}
+
+@keyframes sub-title-animation {
+    0% {
+        left: -1vw;
+        opacity: 0;
+    }
+
+    90%{
+        left: 6vw;
+        opacity: 0.9;
     }
 }
