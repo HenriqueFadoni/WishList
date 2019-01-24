@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './WishRegister.css';
+import './WishRegister.scss';
 import Form from '../../component/Form/Form';
 import axios from '../../axios-setup';
 
