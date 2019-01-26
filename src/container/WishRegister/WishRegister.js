@@ -26,10 +26,10 @@ class WishRegister extends Component {
         }
         axios.post('/wish.json', dataWish)
             .then(response => {
-                this.setState({submitted: true});
+                this.setState({ submitted: true });
             })
             .catch(error => console.log(error));
-        
+
     }
 
     idGenerator = () => {
@@ -48,17 +48,17 @@ class WishRegister extends Component {
         newStateWishElement = newStateElement;
         newStateWish[stateTarget] = newStateWishElement;
 
-        this.setState({wish: newStateWish});
+        this.setState({ wish: newStateWish });
     }
 
-    render () {
+    render() {
         return (
             <Aux>
                 <NavigationBar />
                 <div className='Container'>
-                    <Form 
+                    <Form
                         submitted={this.formHandler}
-                        changed={this.onInputChange}/>
+                        changed={this.onInputChange} />
                 </div>
             </Aux>
         );

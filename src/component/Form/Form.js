@@ -5,7 +5,7 @@ import './Form.scss';
 const Form = props => {
     return (
         <div className='formContainer'>
-            <h1>Add a wish to your WishList!</h1>
+            <h1>MAKE A WISH</h1>
             <form onSubmit={props.submitted}>
                 <input
                     name="title"

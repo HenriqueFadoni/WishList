@@ -1,18 +1,6 @@
-$black-color: #000;
-$image-url: '../../assets/images/backgroundWishRegister.jpg';
-
-body {
-    margin: 0;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 40px 20px 50px 20px;
-}
-
 .Container {
     width: 100%;
-    height: 94vh;
+    height: 100vh;
     position: relative;
     background-color: rgba($black-color, 0.9);
     background-image:
