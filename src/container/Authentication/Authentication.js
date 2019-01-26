@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import SignUp from '../../component/SignUp/SignUp';
 import SignIn from '../../component/SignIn/SignIn';
@@ -32,6 +33,9 @@ class Authentication extends Component {
         return (
             <div>
                 {form}
+                <NavLink to="/">
+                    <button> Home </button>
+                </NavLink>
             </div>
         );
     }
