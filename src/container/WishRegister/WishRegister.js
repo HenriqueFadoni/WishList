@@ -4,7 +4,7 @@ import NavigationBar from '../../component/NavigationBar/NavigationBar';
 import Form from '../../component/Form/Form';
 import axios from '../../axios-setup';
 import Aux from '../../hoc/aux';
-import './WishRegister.scss';
+import '../../sass/main.scss';
 
 
 class WishRegister extends Component {

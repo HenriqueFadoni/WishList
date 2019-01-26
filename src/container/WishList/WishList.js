@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../axios-setup';
 
 import List from '../../component/List/List';
+import '../../sass/main.scss';
 
 class WishList extends Component {
     state = {

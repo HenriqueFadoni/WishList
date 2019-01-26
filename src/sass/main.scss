@@ -1,10 +1,15 @@
-@import '../container/WishRegister/WishRegister.scss';
-@import '../sass/abstract/variables';
+// -- ABSTRACT --
+@import './abstract/variables';
 
-@import '../container/WishRegister/WishRegister.scss';
-@import '../container/WishList/WishList.scss';
+// -- BASE --
+@import './base/base';
 
-@import '../component/Form/Form.scss';
-@import '../component/Intro/Intro.scss';
-@import '../component/List/List.scss';
-@import '../component/NavigationBar/NavigationBar.scss';
+// -- COMPONENTS
+@import './components/form';
+@import './components/list';
+@import './components/navigationbar';
+
+
+@import './intro';
+@import './wishRegister';
+@import './wishlist';
