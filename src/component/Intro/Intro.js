@@ -8,7 +8,7 @@ const Intro = () => {
         <div className="main-div ">
             <h2 className="sub-title">Welcome To</h2>
             <h1 className="title">WISHLIST</h1>
-            <NavLink to="/WishListRegister">
+            <NavLink to="/Authentication">
                 <button className="btn-sign-up">SIGN UP</button>
             </NavLink>
         </div>
