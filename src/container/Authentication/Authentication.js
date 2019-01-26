@@ -6,13 +6,16 @@ class Authentication extends Component {
         register: false
     }
 
-    signUpHandler = () => {
-        this.setState({register:true});
+    signToggleHandler = () => {
+        let state = this.state.register;
+        state = ! state;
+        this.setState({ register: state });
     }
 
     render() {
         let form = (
             <Aux>
+                <h1>SIGN IN</h1>
                 <form>
                     <input
                         type="email"
@@ -27,12 +30,34 @@ class Authentication extends Component {
                         name="submit-auth">Sign In</button>
                 </form>
                 <p>If you don't have an account, register on our platform for free!</p>
-                <button onClick={this.signUpHandler}>Sign Up</button>
+                <button onClick={this.signToggleHandler}>Sign Up</button>
             </Aux>
         );
 
         if (this.state.register) {
-            form = <p>Register ON</p>
+            form = (
+                <Aux>
+                    <h1>SIGN UP</h1>
+                    <form>
+                        <input
+                            type="email"
+                            name="email-register"
+                            placeholder="E-Mail" />
+                        <input
+                            type="password"
+                            name="password-register"
+                            placeholder="Password" />
+                        <input
+                            type="password"
+                            name="password-register-repeat"
+                            placeholder="Repeat Your Password" />
+                        <button
+                            type="submit"
+                            name="submit-auth-register">Sign Up</button>
+                    </form>
+                    <button onClick={this.signToggleHandler}>Cancel</button>
+                </Aux>
+            );
         }
         return (
             <div>
