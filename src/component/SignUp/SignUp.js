@@ -9,14 +9,17 @@ const SignUp = props => (
             <input
                 type="email"
                 name="email-register"
+                onChange={event => props.changed(event, 'email')}
                 placeholder="E-Mail" />
             <input
                 type="password"
                 name="password-register"
+                onChange={event => props.changed(event, 'password')}
                 placeholder="Password" />
             <input
                 type="password"
                 name="password-register-repeat"
+                onChange={event => props.changed(event, 'passwordRepeat')}
                 placeholder="Repeat Your Password" />
             <button
                 type="submit"

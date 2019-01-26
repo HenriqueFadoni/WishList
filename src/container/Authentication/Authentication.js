@@ -6,11 +6,11 @@ import SignIn from '../../component/SignIn/SignIn';
 
 class Authentication extends Component {
     state = {
-        singIn: {
+        signIn: {
             email: '',
             password: ''
         },
-        signOut: {
+        signUp: {
             email: '',
             password: '',
             passwordRepeat: ''
@@ -20,21 +20,47 @@ class Authentication extends Component {
 
     signToggleHandler = () => {
         let state = this.state.register;
-        state = ! state;
+        state = !state;
         this.setState({ register: state });
     }
 
+    onChangeHandler = (event, stateTarget) => {
+        const isSignUp = this.state.register;
+        const sign = isSignUp ? this.state.signUp : this.state.signIn;
+
+        let newSign = {
+            ...sign
+        };
+        let newSignElement = {
+            ...sign[stateTarget]
+        };
+        const newElement = event.target.value;
+        newSignElement = newElement;
+        newSign[stateTarget] = newSignElement;
+
+        if (!isSignUp) {
+            this.setState({ signIn: newSign });
+        }
+        else {
+            this.setState({ signUp: newSign });
+        }
+    }
+
     render() {
-        let form = <SignIn onSignUp={this.signToggleHandler} />
+        let form = <SignIn
+            onSignUp={this.signToggleHandler}
+            changed={this.onChangeHandler} />
 
         if (this.state.register) {
-            form = <SignUp onCancel={this.signToggleHandler}/>
+            form = <SignUp
+                onCancel={this.signToggleHandler}
+                changed={this.onChangeHandler} />
         }
         return (
             <div>
                 {form}
                 <NavLink to="/">
-                    <button> Home </button>
+                    <button>Home</button>
                 </NavLink>
             </div>
         );

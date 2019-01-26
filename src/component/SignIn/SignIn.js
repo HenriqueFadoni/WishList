@@ -9,10 +9,12 @@ const SignIn = props => (
             <input
                 type="email"
                 name="email"
+                onChange={event => props.changed(event,'email')}
                 placeholder="E-Mail" />
             <input
                 type="password"
                 name="password"
+                onChange={event => props.changed(event,'password')}
                 placeholder="Password" />
             <button
                 type="submit"
