@@ -1,0 +1,24 @@
+// -- ANIMATION HOME PAGE --
+@keyframes title-animation {
+    0% {
+        left: 90%;
+        opacity: 0;
+    }
+
+    100%{
+        left: 50%;
+        opacity: 0.9;
+    }
+}
+
+@keyframes sub-title-animation {
+    0% {
+        left: -1vw;
+        opacity: 0;
+    }
+
+    90%{
+        left: 6vw;
+        opacity: 0.9;
+    }
+}

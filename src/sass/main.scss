@@ -1,15 +1,23 @@
 // -- ABSTRACT --
 @import './abstract/variables';
+@import './abstract/functions';
+@import './abstract/mixins';
 
 // -- BASE --
 @import './base/base';
+@import './base/animations';
+@import './base/typography';
+@import './base/utilities';
 
 // -- COMPONENTS
+@import './components/button';
 @import './components/form';
 @import './components/list';
 @import './components/navigationbar';
 
+// -- LAYOUT --
 
-@import './intro';
-@import './wishRegister';
-@import './wishlist';
+// -- PAGES --
+@import './pages/home-page';
+@import './pages/wishRegister';
+@import './pages/wishlist';
