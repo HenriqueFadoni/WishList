@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 import SignUp from '../../component/SignUp/SignUp';
 import SignIn from '../../component/SignIn/SignIn';
@@ -23,6 +24,44 @@ class Authentication extends Component {
         let state = this.state.register;
         state = !state;
         this.setState({ register: state });
+    }
+
+    onSubmitSignUpHandler = event => {
+        event.preventDefault();
+        const isValid = this.signUpValidation();
+        console.log(event)
+
+        if (isValid) {
+            const apiKey = 'AIzaSyCNyw3wkGxKe_aJ80X9FHBpGD7bo5ju36M';
+            const dataSign = {
+                email: this.state.signUp.email,
+                password: this.state.signUp.password,
+                returnSecureToken: true
+            };
+            axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${apiKey}`, dataSign)
+                .then(response => {
+                    console.log(response);
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+        else {
+            console.log("Invalid");
+        }
+    }
+
+    signUpValidation = () => {
+        const passwordOne = this.state.signUp.password;
+        const passwordTwo = this.state.signUp.passwordRepeat;
+
+        if (passwordOne === passwordTwo) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     onChangeHandler = (event, stateTarget) => {
@@ -54,6 +93,7 @@ class Authentication extends Component {
 
         if (this.state.register) {
             form = <SignUp
+                onSignUp={this.onSubmitSignUpHandler}
                 onCancel={this.signToggleHandler}
                 changed={this.onChangeHandler} />
         }

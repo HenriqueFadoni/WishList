@@ -6,7 +6,7 @@ import '../../sass/main.scss';
 const SignUp = props => (
     <Aux>
         <h1>SIGN UP</h1>
-        <form>
+        <form onSubmit={props.onSignUp} >
             <input
                 type="email"
                 name="email-register"
