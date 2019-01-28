@@ -1,0 +1,40 @@
+// Background
+.main-div-authentication {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 0.6em;
+    background-color: rgba($black-color, 0.9);
+    background-image:
+        linear-gradient(rgba($black-color, 0.7), rgba($black-color, 0.7)), 
+        url($image-url-intro);
+    position: relative;
+    color: $black-color;
+}
+
+.input-email,
+.input-password {
+    width: 70%;
+    height: 30px;
+    margin: 2.5% auto;
+    font-size: 1rem;
+}
+
+.input-btn-auth {
+    width: 30%;
+    height: 20%;
+    margin: 5% auto;
+    font-size: 1rem;
+    background-color: $normal-green-color;
+    color: $white-color;
+    border: none;
+    padding: 5px;
+}
+
+.btn-register-for-free {
+    border: none;
+    margin: none;
+    padding: none;
+    font-size: 1rem;
+    color: blue;
+}

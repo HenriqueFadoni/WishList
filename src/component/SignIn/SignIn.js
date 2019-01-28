@@ -9,19 +9,25 @@ const SignIn = props => (
             <input
                 type="email"
                 name="email"
-                onChange={event => props.changed(event,'email')}
+                className="input-email"
+                onChange={event => props.changed(event, 'email')}
                 placeholder="E-Mail" />
             <input
                 type="password"
                 name="password"
-                onChange={event => props.changed(event,'password')}
+                className="input-password"
+                onChange={event => props.changed(event, 'password')}
                 placeholder="Password" />
             <button
                 type="submit"
+                className="input-btn-auth"
                 name="submit-auth">Sign In</button>
         </form>
-        <p>If you don't have an account, register on our platform for free!</p>
-        <button onClick={props.onSignUp}>Sign Up</button>
+        <p>Don't have an account?
+            <button
+                className="btn-register-for-free"
+                onClick={props.onSignUp}>register for free!</button>
+        </p>
     </Aux>
 );
 

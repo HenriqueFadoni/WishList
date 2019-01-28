@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import SignUp from '../../component/SignUp/SignUp';
 import SignIn from '../../component/SignIn/SignIn';
+import '../../sass/main.scss';
 
 class Authentication extends Component {
     state = {
@@ -57,11 +58,13 @@ class Authentication extends Component {
                 changed={this.onChangeHandler} />
         }
         return (
-            <div>
-                {form}
-                <NavLink to="/">
-                    <button>Home</button>
-                </NavLink>
+            <div className="main-div-authentication">
+                <div className="formContainer">
+                    {form}
+                    <NavLink to="/">
+                        <button>Home</button>
+                    </NavLink>
+                </div>
             </div>
         );
     }
