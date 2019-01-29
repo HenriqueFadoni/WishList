@@ -5,7 +5,7 @@ import Aux from '../../hoc/aux';
 const SignIn = props => (
     <Aux>
         <h1>SIGN IN</h1>
-        <form >
+        <form onSubmit={props.onSignIn}>
             <input
                 type="email"
                 name="email"

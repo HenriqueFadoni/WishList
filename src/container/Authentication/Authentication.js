@@ -48,8 +48,28 @@ class Authentication extends Component {
                 });
         }
         else {
-            console.log("Invalid");
+            console.log("Invalid Sign Up");
         }
+    }
+
+    onSubmitSignInHandler = event => {
+        event.preventDefault();
+
+        const apiKey = 'AIzaSyCNyw3wkGxKe_aJ80X9FHBpGD7bo5ju36M';
+        const dataSign = {
+            email: this.state.signIn.email,
+            password: this.state.signIn.password,
+            returnSecureToken: true
+        };
+        axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`, dataSign)
+            .then(response => {
+                console.log(response);
+                console.log(response.data);
+                console.log('Sign In')
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     signUpValidation = () => {
@@ -88,6 +108,7 @@ class Authentication extends Component {
 
     render() {
         let form = <SignIn
+            onSignIn={this.onSubmitSignInHandler}
             onSignUp={this.signToggleHandler}
             changed={this.onChangeHandler} />
 
