@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import SignUp from '../../component/SignUp/SignUp';
@@ -17,6 +17,7 @@ class Authentication extends Component {
             password: '',
             passwordRepeat: ''
         },
+        token: null,
         register: false
     }
 
@@ -41,7 +42,7 @@ class Authentication extends Component {
             axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${apiKey}`, dataSign)
                 .then(response => {
                     console.log(response);
-                    console.log(response.data);
+                    
                 })
                 .catch(error => {
                     console.log(error);
@@ -65,7 +66,8 @@ class Authentication extends Component {
             .then(response => {
                 console.log(response);
                 console.log(response.data);
-                console.log('Sign In')
+                const newToken = response.data.idToken;
+                this.setState({token: newToken});
             })
             .catch(error => {
                 console.log(error);
@@ -117,6 +119,9 @@ class Authentication extends Component {
                 onSignUp={this.onSubmitSignUpHandler}
                 onCancel={this.signToggleHandler}
                 changed={this.onChangeHandler} />
+        }
+        else if (!this.state.register && this.state.token) {
+            form = <Redirect to="/WishListRegister" />
         }
         return (
             <div className="main-div-authentication">
