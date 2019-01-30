@@ -20,7 +20,6 @@ class Authentication extends Component {
             password: '',
             passwordRepeat: ''
         },
-        token: null,
         register: false
     }
 
@@ -59,22 +58,6 @@ class Authentication extends Component {
     onSubmitSignInHandler = event => {
         event.preventDefault();
         this.props.onSignInAuth(this.state.signIn.email, this.state.signIn.password, true)
-        // const apiKey = 'AIzaSyCNyw3wkGxKe_aJ80X9FHBpGD7bo5ju36M';
-        // const dataSign = {
-        //     email: this.state.signIn.email,
-        //     password: this.state.signIn.password,
-        //     returnSecureToken: true
-        // };
-        // axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`, dataSign)
-        //     .then(response => {
-        //         console.log(response);
-        //         console.log(response.data);
-        //         const newToken = response.data.idToken;
-        //         this.setState({token: newToken});
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
     }
 
     signUpValidation = () => {
