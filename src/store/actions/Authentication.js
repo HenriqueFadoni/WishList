@@ -22,6 +22,15 @@ const authFail = error => {
     }
 }
 
+export const logout = () => {
+    localStorage.removeItem('Token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('expirationTime');
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    };
+}
+
 export const authSignIn = (email, password, secureToken) => {
     return dispatch => {
         dispatch(authStart());

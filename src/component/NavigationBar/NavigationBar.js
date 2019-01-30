@@ -6,8 +6,8 @@ import '../../sass/main.scss';
 const NavigationBar = () => {
     return (
         <div className="nav-container">
-            <NavLink to="/">
-                <button className="btn-nav btn-nav-1">HOME</button>
+            <NavLink to="/Logout">
+                <button className="btn-nav btn-nav-1">LOGOUT</button>
             </NavLink>
             <NavLink to="/WishList">
                 <button className="btn-nav btn-nav-2">WISH LIST</button>
