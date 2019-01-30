@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 
 import axios from 'axios';
 
+import * as actions from '../../store/actions/index';
 import SignUp from '../../component/SignUp/SignUp';
 import SignIn from '../../component/SignIn/SignIn';
 import '../../sass/main.scss';
@@ -56,23 +58,23 @@ class Authentication extends Component {
 
     onSubmitSignInHandler = event => {
         event.preventDefault();
-
-        const apiKey = 'AIzaSyCNyw3wkGxKe_aJ80X9FHBpGD7bo5ju36M';
-        const dataSign = {
-            email: this.state.signIn.email,
-            password: this.state.signIn.password,
-            returnSecureToken: true
-        };
-        axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`, dataSign)
-            .then(response => {
-                console.log(response);
-                console.log(response.data);
-                const newToken = response.data.idToken;
-                this.setState({token: newToken});
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        this.props.onSignInAuth(this.state.signIn.email, this.state.signIn.password, true)
+        // const apiKey = 'AIzaSyCNyw3wkGxKe_aJ80X9FHBpGD7bo5ju36M';
+        // const dataSign = {
+        //     email: this.state.signIn.email,
+        //     password: this.state.signIn.password,
+        //     returnSecureToken: true
+        // };
+        // axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${apiKey}`, dataSign)
+        //     .then(response => {
+        //         console.log(response);
+        //         console.log(response.data);
+        //         const newToken = response.data.idToken;
+        //         this.setState({token: newToken});
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     })
     }
 
     signUpValidation = () => {
@@ -137,4 +139,12 @@ class Authentication extends Component {
     }
 }
 
-export default Authentication;
+
+
+const mapDispatchToProps = dispatch => {
+    return{
+        onSignInAuth: (email, password, secureToken = true) => dispatch(actions.authSignIn(email, password, secureToken))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Authentication);
