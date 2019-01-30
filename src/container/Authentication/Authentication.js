@@ -96,6 +96,7 @@ class Authentication extends Component {
 
     render() {
         let form = <SignIn
+            onSignInError={this.props.error}
             onSignIn={this.onSubmitSignInHandler}
             onSignUp={this.signToggleHandler}
             changed={this.onChangeHandler} />
@@ -124,7 +125,8 @@ class Authentication extends Component {
 
 const mapStateToProps = state => {
     return {
-        token: state.authSignIn.idToken
+        token: state.authSignIn.idToken,
+        error: state.authSignIn.error
     }
 }
 

@@ -4,8 +4,8 @@ import * as actionTypes from './actionTypes';
 const authStart = () => {
     return {
         type: actionTypes.AUTH_START
-    }
-}
+    };
+};
 
 const authSuccess = (token, id) => {
     return {
@@ -14,6 +14,13 @@ const authSuccess = (token, id) => {
         userId: id
     };
 };
+
+const authFail = error => {
+    return {
+        type: actionTypes.AUTH_FAIL,
+        error: error
+    }
+}
 
 export const authSignIn = (email, password, secureToken) => {
     return dispatch => {
@@ -34,7 +41,8 @@ export const authSignIn = (email, password, secureToken) => {
                 dispatch(authSuccess(response.data.idToken, response.data.localId));
             })
             .catch( error => {
-                console.log(error)
+                let errorMessage = 'Password or E-mail Invalid';
+                dispatch(authFail(errorMessage));
             });
-    }
-}
+    };
+};
