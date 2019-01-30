@@ -106,7 +106,7 @@ class Authentication extends Component {
                 onCancel={this.signToggleHandler}
                 changed={this.onChangeHandler} />
         }
-        else if (!this.state.register && this.state.token) {
+        else if (!this.state.register && this.props.token) {
             form = <Redirect to="/WishListRegister" />
         }
         return (
@@ -122,7 +122,11 @@ class Authentication extends Component {
     }
 }
 
-
+const mapStateToProps = state => {
+    return {
+        token: state.authSignIn.idToken
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return{
@@ -130,4 +134,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Authentication);
+export default connect(mapStateToProps, mapDispatchToProps)(Authentication);
