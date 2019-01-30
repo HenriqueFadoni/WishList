@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
+
 import axios from 'axios';
 
 import SignUp from '../../component/SignUp/SignUp';
